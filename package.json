@@ -1,0 +1,55 @@
+{
+  "name": "bayou-board",
+  "version": "1.0.4",
+  "description": "Track your Hunt: Showdown friends' stats over time - MMR, KD, kills, deaths and bounty.",
+  "main": "./out/main/index.js",
+  "author": "Bayou Board",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "start": "electron-vite preview",
+    "build": "electron-vite build",
+    "dist": "electron-vite build && electron-builder",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^5.2.0",
+    "7zip-bin": "^5.2.0",
+    "app-builder-bin": "^4.2.0",
+    "electron": "^43.3.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.6"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "recharts": "^3.10.1"
+  },
+  "build": {
+    "appId": "com.bayouboard.app",
+    "productName": "Bayou Board",
+    "publish": null,
+    "files": [
+      "out/**",
+      "build/hunt-logo.ico",
+      "!out/**/*.map"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/hunt-logo.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "artifactName": "Bayou-Board-Setup-${version}.exe"
+    }
+  }
+}
