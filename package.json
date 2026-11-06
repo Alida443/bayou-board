@@ -1,6 +1,6 @@
 {
   "name": "bayou-board",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Track your Hunt: Showdown friends' stats over time - MMR, KD, kills, deaths and bounty.",
   "main": "./out/main/index.js",
   "author": "Bayou Board",
